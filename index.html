@@ -10,19 +10,36 @@
     <title>Tic-Tac-Toe</title>
 </head>
 <body>
-    <header>
+    <header class="header">
         <div class="wrapper">
-            <h1>Tic-Tac-Toe</h1>
+            <h1 class="header__heading">Tic-Tac-Toe</h1>
         </div>
     </header>
-    <main>
+    <main class="main">
         <div class="wrapper">
+            <div id="welcomeDialog" class="modal">
+                <div class="welcome__modalContent">
+                    <h2 class="welcome__heading">Welcome</h2>
+                    <h3 class="welcome__subHeading">Instructions</h3>
+                    <ul class="welcome__list">
+                        <li class="welcome__item"></li>
+                        <li class="welcome__item"></li>
+                        <li class="welcome__item"></li>
+                    </ul>
+                </div>
+            </div>
 
+            <div id="winnerDialog" class="modal">
+                <div class="winner__modalContent">
+                    <h2 class="winner__heading"></h2>
+                    <p class="winner__text"></p>
+                </div>
+            </div>
         </div>
     </main>
-    <footer>
+    <footer class="footer">
         <div class="wrapper">
-            <p>copyright <span class="far fa-copyright"></span> vincent dang <span id="year"></span></p>
+            <p class="footer__text">copyright <span class="far fa-copyright"></span> vincent dang <span id="year" class="footer__innerText"></span></p>
         </div>
     </footer>
     <script src="./js/scripts.js"></script>
