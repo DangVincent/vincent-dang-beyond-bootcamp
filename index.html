@@ -17,23 +17,70 @@
     </header>
     <main class="main">
         <div class="wrapper">
-            <div id="welcomeDialog" class="modal">
-                <div class="welcome__modalContent">
-                    <h2 class="welcome__heading">Welcome</h2>
-                    <h3 class="welcome__subHeading">Instructions</h3>
-                    <ul class="welcome__list">
-                        <li class="welcome__item"></li>
-                        <li class="welcome__item"></li>
-                        <li class="welcome__item"></li>
-                    </ul>
-                </div>
+            <div id="welcomeDialog" class="welcome__modal">
+                <h2 class="welcome__heading">welcome</h2>
+                <h3 class="welcome__subHeading">instructions</h3>
+                <ul class="welcome__list">
+                    <li class="welcome__item">this game is played on a 3x3 grid where the player will face off against the computer by clicking on any cell of the grid to place your mark.</li>
+                    <li class="welcome__item">the first player to either get
+                    three x’s or o’s in a row (up, down, across, or diagonally) is the winner.</li>
+                    <li class="welcome__item">when all 9 squares are full, the game is a draw.</li>
+                    <li class="welcome__item">have fun!</li>
+                </ul>
+                <button type="button" class="welcome__button">play</button>
             </div>
 
-            <div id="winnerDialog" class="modal">
-                <div class="winner__modalContent">
-                    <h2 class="winner__heading"></h2>
-                    <p class="winner__text"></p>
-                </div>
+            <div class="gameGrid">
+                <table class="gameGrid__table">
+                    <tr class="gameGrid__tableRow">
+                        <td class="gameGrid__tableColumn">
+                            <button type="button" id="cell1" class="gameGrid__button"></button>
+                        </td>
+                        <td class="gameGrid__tableColumn">
+                            <button type="button" id="cell2" class="gameGrid__button"></button>
+                        </td>
+                        </td>
+                        <td class="gameGrid__tableColumn">
+                            <button type="button" id="cell3" class="gameGrid__button"></button>
+                        </td>
+                        </td>
+                    </tr>
+                    <tr class="gameGrid__tableRow">
+                        <td class="gameGrid__tableColumn">
+                            <button type="button" id="cell4" class="gameGrid__button"></button>
+                        </td>
+                        </td>
+                        <td class="gameGrid__tableColumn">
+                            <button type="button" id="cell5" class="gameGrid__button"></button>
+                        </td>
+                        </td>
+                        <td class="gameGrid__tableColumn">
+                            <button type="button" id="cell6" class="gameGrid__button"></button>
+                        </td>
+                        </td>
+                    </tr>
+                    <tr class="gameGrid__tableRow">
+                        <td class="gameGrid__tableColumn">
+                            <button type="button" id="cell7" class="gameGrid__button"></button>
+                        </td>
+                        </td>
+                        <td class="gameGrid__tableColumn">
+                            <button type="button" id="cell8" class="gameGrid__button"></button>
+                        </td>
+                        </td>
+                        <td class="gameGrid__tableColumn">
+                            <button type="button" id="cell9" class="gameGrid__button"></button>
+                        </td>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="winnerDialog" class="winner__modal">
+                <h2 class="winner__heading"><span id="player" class="winner__innerHeading"></span> is the winner!</h2>
+                <p class="winner__text">play again?</p>
+                <button type="button" class="winner__button">yes</button>
+                <button type="button" class="winner__button">no</button>
             </div>
         </div>
     </main>
