@@ -13,15 +13,15 @@ a {
 html {
     font-size: 125%;
 }
+body {
+    background-image: url("../assets/background.jpg");
+}
 img {
     display: block;
     width: 100%;
 }
 a {
     text-decoration: none;
-}
-ul li {
-    list-style-type: none;
 }
 .wrapper {
     max-width: 1280px;

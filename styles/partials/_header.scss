@@ -1,3 +1,9 @@
 // Header styles starts here
-
+.header {
+    &__heading {
+        color: $white;
+        text-align: center;
+        margin: 20px 0 50px;
+    }
+}
 // Header styles ends here

@@ -159,6 +159,9 @@ a {
 html {
   font-size: 125%; }
 
+body {
+  background-image: url("../assets/background.jpg"); }
+
 img {
   display: block;
   width: 100%; }
@@ -166,10 +169,39 @@ img {
 a {
   text-decoration: none; }
 
-ul li {
-  list-style-type: none; }
-
 .wrapper {
   max-width: 1280px;
   width: 80%;
   margin: 0 auto; }
+
+.header__heading {
+  color: #FFF;
+  text-align: center;
+  margin: 20px 0 50px; }
+
+.welcome__modal,
+.winner__modal {
+  background: #FFF; }
+
+.gameGrid {
+  margin: 100px 0; }
+  .gameGrid__table, .gameGrid__tableRow, .gameGrid__tableColumn {
+    margin: 0 auto;
+    border: 2px solid #FFF;
+    border-collapse: collapse; }
+  .gameGrid__tableColumn {
+    width: 100px;
+    height: 100px; }
+  .gameGrid__button {
+    display: block;
+    height: 100%;
+    width: 100%;
+    border: none;
+    background: none; }
+    .gameGrid__button:hover, .gameGrid__button:focus {
+      background: rgba(255, 255, 255, 0.1); }
+
+.footer__text {
+  color: #FFF;
+  text-align: center;
+  text-transform: capitalize; }
