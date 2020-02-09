@@ -1,16 +1,120 @@
 // Main styles starts here
+.main {    
+    .wrapper {
+        position: relative;
+    }
+}
 .welcome__modal,
 .winner__modal {
+    @include baseFontSize(1rem);
+    border-radius: 40px;
     background: $white;
+    position: absolute;
+    padding: 25px 0;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 .welcome {
-
+    &__modal {
+        display: none;
+    }
+    &__heading, 
+    &__subHeading {
+        text-align: center;
+    }
+    &__heading {
+        @include headerFontSize(1.2rem);
+    }
+    &__subHeading,
+    &__radioGroup {
+        text-transform: capitalize;
+    }
+    &__optionsForm {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    &__radioContainer {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__radioGroup {
+        border: none;
+        border-top: 1px solid $black;
+        width: 45%;
+    }
+    &__legend {
+        margin: 0 auto;
+    }
+    &__radioList {
+        display: flex;
+        justify-content: space-around;
+    }
+    &__instructionItem {
+        &::first-letter {
+            text-transform: capitalize;
+        }
+    }
+    &__button {
+        @include headerFontSize(1rem);
+        background: $black;
+        color: $white;
+        border: none;
+        padding: 5px 0;
+        transition: color 0.3s;
+        &:hover,
+        &:focus {
+            color: $metallicMint;
+        }
+    }
 }
 .winner {
-    
+    &__modal {
+        .wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+    &__heading {
+        @include headerFontSize(1.2rem);
+        text-transform: initial;
+    }
+    &__innerHeading {
+        text-transform: capitalize;
+    }
+    &__text,
+    &__button {
+        text-transform: capitalize;
+    }
+    &__buttonContainer {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+    }
+    &__text {
+        margin: 15px 0;
+    }
+    &__button {
+        @include headerFontSize(1rem);
+        background: $black;
+        border-radius: 5px;
+        color: $white;
+        border: none;
+        padding: 5px 10px;
+        transition: color 0.3s;
+        &:hover,
+        &:focus {
+            color: $metallicMint;
+        }
+    }
 }
 .gameGrid {
-    margin: 100px 0;
+    margin: 150px 0;
     &__table {
         margin: 0 auto;
         border: 2px solid $white;
@@ -32,7 +136,7 @@
         background: none;
         &:hover,
         &:focus {
-            background: $colorButtonHover;
+            background: $gridColorButtonHover;
         }
     }
 }

@@ -1,6 +1,7 @@
 // Header styles starts here
 .header {
     &__heading {
+        @include headerFontSize(1.2rem);
         color: $white;
         text-align: center;
         margin: 20px 0 50px;

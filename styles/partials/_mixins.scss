@@ -1,3 +1,15 @@
 // Mixins starts here
 
+@mixin headerFontSize($headerSizeValue) {
+    font-size: $headerSizeValue;
+    font-family: 'Press Start 2P', cursive;
+    text-transform: capitalize;
+}
+@mixin baseFontSize($baseSizeValue) {
+    font-size: $baseSizeValue;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+
+
 // Mixins ends here

@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700|Press+Start+2P&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
     <title>Tic-Tac-Toe</title>
 </head>
+
 <body>
     <!-- Header content starts here -->
     <header class="header">
@@ -19,26 +24,66 @@
     <!-- Header content ends here -->
     <!-- Main content starts here -->
     <main class="main">
-        <div class="wrapper">
-            <div id="welcomeDialog" class="welcome__modal">
+        <div id="welcomeDialog" class="welcome__modal">
+            <div class="wrapper">
                 <h2 class="welcome__heading">welcome</h2>
                 <h3 class="welcome__subHeading">instructions</h3>
-                <ol class="welcome__list">
-                    <li class="welcome__item">this game is played on a 3x3 grid where the player will face off against the computer by clicking on any cell of the grid to place your mark.</li>
-                    <li class="welcome__item">the first player to either get
-                    three x’s or o’s in a row (up, down, across, or diagonally) is the winner.</li>
-                    <li class="welcome__item">when all 9 squares are full, the game is a draw.</li>
-                    <li class="welcome__item">have fun!</li>
+                <ol class="welcome__instructionList">
+                    <li class="welcome__instructionItem">this game is played on a 3x3 grid where the player will face
+                        off against the computer by clicking on any cell of the grid to place your mark.</li>
+                    <li class="welcome__instructionItem">the first player to either get
+                        three x’s or o’s in a row (up, down, across, or diagonally) is the winner.</li>
+                    <li class="welcome__instructionItem">when all 9 squares are full, the game is a draw.</li>
+                    <li class="welcome__instructionItem">have fun!</li>
                 </ol>
-                <button type="button" class="welcome__button">play</button>
+                <form id="welcome__optionsForm" class="welcome__optionsForm">
+                    <div class="welcome__radioContainer">
+                        <fieldset class="welcome__radioGroup">
+                            <legend class="welcome__legend">select mode</legend>
+                            <ul class="welcome__radioList">
+                                <li class="welcome__radioItem">
+                                    <input type="radio" name="mode" id="easy" class="welcome__modeSelect" value="easy">
+                                    <label for="easy" class="welcome__modeLabel">easy</label>
+                                </li>
+                                <li class="welcome__radioItem">
+                                    <input type="radio" name="mode" id="hard" class="welcome__modeSelect" value="hard">
+                                    <label for="hard" class="welcome__modeLabel">hard</label>
+                                </li>
+                            </ul>
+                        </fieldset>
+                        <fieldset class="welcome__radioGroup">
+                            <legend class="welcome__legend">select marker</legend>
+                            <ul class="welcome__radioList">
+                                <li class="welcome__radioItem">
+                                    <input type="radio" name="marker" id="markerX" class="welcome__markerSelect"
+                                        value="x">
+                                    <label for="markerX" class="welcome__markerLabel">x</label>
+                                </li>
+                                <li class="welcome__radioItem">
+                                    <input type="radio" name="marker" id="markerO" class="welcome__markerSelect"
+                                        value="o">
+                                    <label for="markerO" class="welcome__markerLabel">o</label>
+                                </li>
+                            </ul>
+                        </fieldset>
+                    </div>
+                    <input type="submit" id="submit" class="welcome__button" value="Play" />
+                </form>
             </div>
-            <div id="winnerDialog" class="winner__modal">
-                <h2 class="winner__heading"><span id="player" class="winner__innerHeading"></span> is the winner!</h2>
+        </div>
+        <div id="winnerDialog" class="winner__modal">
+            <div class="wrapper">
+                <h2 class="winner__heading"><span id="player" class="winner__innerHeading"></span> is the <span
+                        class="winner__innerHeading">winner!</span></h2>
                 <p class="winner__text">play again?</p>
-                <button type="button" class="winner__button">yes</button>
-                <button type="button" class="winner__button">no</button>
+                <div class="winner__buttonContainer">
+                    <button type="button" class="winner__button">yes</button>
+                    <button type="button" class="winner__button">no</button>
+                </div>
             </div>
-            <div class="gameGrid">
+        </div>
+        <div class="gameGrid">
+            <div class="wrapper">
                 <table class="gameGrid__table">
                     <tr class="gameGrid__tableRow">
                         <td class="gameGrid__tableColumn">
@@ -89,7 +134,8 @@
     <!-- Footer content starts here -->
     <footer class="footer">
         <div class="wrapper">
-            <p class="footer__text">copyright <span class="far fa-copyright"></span> vincent dang <span id="year" class="footer__innerText"></span></p>
+            <p class="footer__text">copyright <span class="far fa-copyright"></span> vincent dang <span id="year"
+                    class="footer__innerText"></span></p>
         </div>
     </footer>
     <!-- Footer content ends here -->
@@ -97,4 +143,5 @@
     <script src="./js/scripts.js"></script>
     <!-- Scripts ends here -->
 </body>
+
 </html>

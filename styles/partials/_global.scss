@@ -16,6 +16,9 @@ html {
 body {
     background-image: url("../assets/background.jpg");
 }
+ul li {
+    list-style-type: none;
+}
 img {
     display: block;
     width: 100%;

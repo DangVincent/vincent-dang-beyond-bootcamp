@@ -162,6 +162,9 @@ html {
 body {
   background-image: url("../assets/background.jpg"); }
 
+ul li {
+  list-style-type: none; }
+
 img {
   display: block;
   width: 100%; }
@@ -175,16 +178,151 @@ a {
   margin: 0 auto; }
 
 .header__heading {
+  font-size: 1.2rem;
+  font-family: 'Press Start 2P', cursive;
+  text-transform: capitalize;
   color: #FFF;
   text-align: center;
   margin: 20px 0 50px; }
 
+.main .wrapper {
+  position: relative; }
+
 .welcome__modal,
 .winner__modal {
-  background: #FFF; }
+  font-size: 1rem;
+  font-family: 'Merriweather Sans', sans-serif;
+  border-radius: 40px;
+  background: #FFF;
+  position: absolute;
+  padding: 25px 0;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+.welcome__modal {
+  display: none; }
+
+.welcome__heading, .welcome__subHeading {
+  text-align: center; }
+
+.welcome__heading {
+  font-size: 1.2rem;
+  font-family: 'Press Start 2P', cursive;
+  text-transform: capitalize; }
+
+.welcome__subHeading, .welcome__radioGroup {
+  text-transform: capitalize; }
+
+.welcome__optionsForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+
+.welcome__radioContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.welcome__radioGroup {
+  border: none;
+  border-top: 1px solid #000;
+  width: 45%; }
+
+.welcome__legend {
+  margin: 0 auto; }
+
+.welcome__radioList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around; }
+
+.welcome__instructionItem::first-letter {
+  text-transform: capitalize; }
+
+.welcome__button {
+  font-size: 1rem;
+  font-family: 'Press Start 2P', cursive;
+  text-transform: capitalize;
+  background: #000;
+  color: #FFF;
+  border: none;
+  padding: 5px 0;
+  -webkit-transition: color 0.3s;
+  -o-transition: color 0.3s;
+  transition: color 0.3s; }
+  .welcome__button:hover, .welcome__button:focus {
+    color: #37FDFC; }
+
+.winner__modal .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center; }
+
+.winner__heading {
+  font-size: 1.2rem;
+  font-family: 'Press Start 2P', cursive;
+  text-transform: capitalize;
+  text-transform: initial; }
+
+.winner__innerHeading {
+  text-transform: capitalize; }
+
+.winner__text, .winner__button {
+  text-transform: capitalize; }
+
+.winner__buttonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-pack: distribute;
+  justify-content: space-around; }
+
+.winner__text {
+  margin: 15px 0; }
+
+.winner__button {
+  font-size: 1rem;
+  font-family: 'Press Start 2P', cursive;
+  text-transform: capitalize;
+  background: #000;
+  border-radius: 5px;
+  color: #FFF;
+  border: none;
+  padding: 5px 10px;
+  -webkit-transition: color 0.3s;
+  -o-transition: color 0.3s;
+  transition: color 0.3s; }
+  .winner__button:hover, .winner__button:focus {
+    color: #37FDFC; }
 
 .gameGrid {
-  margin: 100px 0; }
+  margin: 150px 0; }
   .gameGrid__table, .gameGrid__tableRow, .gameGrid__tableColumn {
     margin: 0 auto;
     border: 2px solid #FFF;
