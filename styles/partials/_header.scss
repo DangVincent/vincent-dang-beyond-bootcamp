@@ -5,6 +5,9 @@
         color: $white;
         text-align: center;
         margin: 20px 0 50px;
+        @include resCaptain {
+            font-size: 1rem;
+        }
     }
 }
 // Header styles ends here

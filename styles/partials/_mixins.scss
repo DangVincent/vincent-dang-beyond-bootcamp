@@ -9,7 +9,14 @@
     font-size: $baseSizeValue;
     font-family: 'Merriweather Sans', sans-serif;
 }
-
-
+@mixin resGeneral {
+    @media (max-width: 1080px) { @content; }
+}
+@mixin resColonel {
+    @media (max-width: 840px) { @content; }
+}
+@mixin resCaptain {
+    @media (max-width: 570px) { @content; }
+}
 
 // Mixins ends here

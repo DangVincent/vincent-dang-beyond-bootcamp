@@ -1,9 +1,13 @@
 // Footer styles starts here
 .footer {
     &__text {
+        @include baseFontSize(1rem);
         color: $white;
         text-align: center;
         text-transform: capitalize;
+        @include resCaptain {
+            font-size: 0.9rem;
+        }
     }
 }
 // Footer styles ends here

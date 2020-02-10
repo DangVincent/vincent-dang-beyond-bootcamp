@@ -1,24 +1,35 @@
 // Main styles starts here
-.main {    
-    .wrapper {
-        position: relative;
-    }
+.modal {
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $modalBackgroundColor;
+    overflow: auto;
 }
-.welcome__modal,
-.winner__modal {
+.welcome__modalContent,
+.winner__modalContent {
     @include baseFontSize(1rem);
     border-radius: 40px;
     background: $white;
-    position: absolute;
+    margin: 100px auto;
+    width: 50%;
     padding: 25px 0;
-    z-index: 10;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    @include resColonel {
+        font-size: 0.9rem;
+    }
+    @include resCaptain {
+        width: 80%;
+    }
 }
 .welcome {
-    &__modal {
-        display: none;
+    &__modalContent {
+        padding: 30px;
+        @include resGeneral {
+            width: 80%;
+        }
     }
     &__heading, 
     &__subHeading {
@@ -26,6 +37,9 @@
     }
     &__heading {
         @include headerFontSize(1.2rem);
+        @include resColonel {
+            font-size: 1rem;
+        }
     }
     &__subHeading,
     &__radioGroup {
@@ -38,23 +52,36 @@
     }
     &__radioContainer {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
+        @include resGeneral {
+            flex-direction: column;
+            align-items: center;
+        }
     }
     &__radioGroup {
         border: none;
         border-top: 1px solid $black;
         width: 45%;
+        @include resGeneral {
+            width: 80%;
+            padding: 0;
+        }
     }
     &__legend {
         margin: 0 auto;
+    }
+    &__instructionItem {
+        &::first-letter {
+            text-transform: capitalize;
+        }
     }
     &__radioList {
         display: flex;
         justify-content: space-around;
     }
-    &__instructionItem {
-        &::first-letter {
-            text-transform: capitalize;
+    &__radioItem {
+        @include resGeneral {
+            width: 100%;
         }
     }
     &__button {
@@ -68,21 +95,31 @@
         &:focus {
             color: $metallicMint;
         }
+        @include resColonel {
+            font-size: 0.9rem;
+        }
     }
 }
 .winner {
-    &__modal {
-        .wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
+    display: none;
+    &__modalContent {
+        width: 50%;
+        margin: 275px auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        @include resColonel {
+            width: 80%;
         }
     }
     &__heading {
         @include headerFontSize(1.2rem);
         text-transform: initial;
+        @include resCaptain {
+            font-size: 1rem;
+        }
     }
     &__innerHeading {
         text-transform: capitalize;
@@ -94,9 +131,14 @@
     &__buttonContainer {
         display: flex;
         width: 100%;
-        justify-content: space-around;
+        justify-content: space-evenly;
+        @include resCaptain {
+            flex-direction: column;
+            width: 50%;
+        }
     }
     &__text {
+        @include baseFontSize(1rem);
         margin: 15px 0;
     }
     &__button {
@@ -110,6 +152,10 @@
         &:hover,
         &:focus {
             color: $metallicMint;
+        }
+        @include resCaptain {
+            font-size: 0.9rem;
+            margin: 5px 0;
         }
     }
 }
