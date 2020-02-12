@@ -175,6 +175,7 @@
         height: 100px;
     }
     &__button {
+        @include baseFontSize(3rem);
         display: block;
         height: 100%;
         width: 100%;
@@ -184,6 +185,13 @@
         &:focus {
             background: $gridColorButtonHover;
         }
+    }
+}
+.disabled {
+    color: $metallicMint;
+    &:hover,
+    &:focus {
+        background: none;
     }
 }
 // Main styles ends here

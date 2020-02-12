@@ -387,6 +387,8 @@ a {
     width: 100px;
     height: 100px; }
   .gameGrid__button {
+    font-size: 3rem;
+    font-family: 'Merriweather Sans', sans-serif;
     display: block;
     height: 100%;
     width: 100%;
@@ -394,6 +396,11 @@ a {
     background: none; }
     .gameGrid__button:hover, .gameGrid__button:focus {
       background: rgba(255, 255, 255, 0.1); }
+
+.disabled {
+  color: #37FDFC; }
+  .disabled:hover, .disabled:focus {
+    background: none; }
 
 .footer__text {
   font-size: 1rem;
