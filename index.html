@@ -24,7 +24,7 @@
     <!-- Header content ends here -->
     <!-- Main content starts here -->
     <main class="main">
-        <div id="welcomeDialog" class="welcome modal">
+        <div id="welcomeModal" class="welcome modal">
             <div class="welcome__modalContent">
                 <h2 class="welcome__heading">welcome</h2>
                 <h3 class="welcome__subHeading">instructions</h3>
@@ -38,11 +38,12 @@
                 </ol>
                 <form id="welcome__optionsForm" class="welcome__optionsForm">
                     <div class="welcome__radioContainer">
-                        <fieldset class="welcome__radioGroup">
+                        <fieldset id="selectMode" class="welcome__radioGroup">
                             <legend class="welcome__legend">select mode</legend>
                             <ul class="welcome__radioList">
                                 <li class="welcome__radioItem">
-                                    <input type="radio" name="mode" id="easy" class="welcome__modeSelect" value="easy">
+                                    <input type="radio" name="mode" id="easy" class="welcome__modeSelect" value="easy"
+                                        checked>
                                     <label for="easy" class="welcome__modeLabel">easy</label>
                                 </li>
                                 <li class="welcome__radioItem">
@@ -51,12 +52,12 @@
                                 </li>
                             </ul>
                         </fieldset>
-                        <fieldset class="welcome__radioGroup">
+                        <fieldset id="selectMarker" class="welcome__radioGroup">
                             <legend class="welcome__legend">select marker</legend>
                             <ul class="welcome__radioList">
                                 <li class="welcome__radioItem">
                                     <input type="radio" name="marker" id="markerX" class="welcome__markerSelect"
-                                        value="x">
+                                        value="x" checked>
                                     <label for="markerX" class="welcome__markerLabel">x</label>
                                 </li>
                                 <li class="welcome__radioItem">
@@ -71,7 +72,7 @@
                 </form>
             </div>
         </div>
-        <div id="winnerDialog" class="winner modal">
+        <div id="winnerModal" class="winner modal">
             <div class="winner__modalContent">
                 <h2 class="winner__heading"><span id="player" class="winner__innerHeading"></span> is the <span
                         class="winner__innerHeading">winner!</span></h2>
