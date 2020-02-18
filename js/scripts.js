@@ -1,23 +1,40 @@
 // Scripts starts here
 const myTicTacToeApp = {};
 
+// Selectors
+myTicTacToeApp._welcomeModal;
+myTicTacToeApp._winnerModal;
+myTicTacToeApp._welcomeSubmitForm;
+myTicTacToeApp._winner;
+myTicTacToeApp._yesButton;
+myTicTacToeApp._noButton;
+myTicTacToeApp._footerYear;
+myTicTacToeApp._gameGridButtons;
+myTicTacToeApp.numOfSpotsTaken = 0;
+myTicTacToeApp.userMoves = [];
+myTicTacToeApp.computerMoves = [];
+myTicTacToeApp.winCombinations = [
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+    [0,4,8],
+    [2,4,6]
+];
+
 // Handle welcome form inputs when user submits
 myTicTacToeApp.handleWelcomeModalOptions = function() {
-    const welcomeModal = document.getElementById('welcomeModal');
-    const submitForm = document.getElementById('welcomeOptionsForm');
-
-    submitForm.addEventListener('submit', (e) => {
+    this._welcomeSubmitForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const { mode, marker } = e.currentTarget;
         const selectedMode = mode.value;
         const selectedMarker = marker.value;
         
-        this.numOfSpotsTaken = 0;
         this.userMarker = selectedMarker;
         this.currentMode = selectedMode;
-        this.userMoves = [];
-        this.computerMoves = [];
-        this.closeModal(welcomeModal);
+        this.closeModal(this._welcomeModal);
         this.setComputerMarker();
     })
 }
@@ -28,7 +45,13 @@ myTicTacToeApp.disableButton = function(button) {
     button.disabled = true;
 }
 
-// Handle user button clicks function
+// Enable button after user plays again and add styling
+myTicTacToeApp.enableButton = function(button) {
+    button.classList.remove('disabled');
+    button.disabled = false;
+}
+
+// Handle user button clicks on game grid
 myTicTacToeApp.handleUserButtonClick = function() {
     this.textContent = myTicTacToeApp.userMarker;
     myTicTacToeApp.userMoves.push(parseInt(this.id[this.id.length - 1]));    
@@ -40,23 +63,14 @@ myTicTacToeApp.handleUserButtonClick = function() {
 
 // Handle grid buttons by setting click events for each of them
 myTicTacToeApp.handleGridButtons = function() {
-
-    const gameGridButtons = document.querySelectorAll('.gameGrid__button');
-    this.gameGridButtons = gameGridButtons;
-
-    gameGridButtons.forEach(button => {
+    this._gameGridButtons.forEach(button => {
         button.addEventListener('click', this.handleUserButtonClick);
     });
 }
 
 // Handle computer events based on selected mode
 myTicTacToeApp.handleComputerEvents = function() {
-    if (this.currentMode === "easy" && !this.winner) {
-        this.easyMode();
-    }
-    else {
-        this.hardMode();
-    }
+    (this.currentMode === "easy" && !this.winner) ? this.easyMode() : this.hardMode();
 }
 
 // Handles computer decision when user selects easy mode
@@ -81,23 +95,14 @@ myTicTacToeApp.hardMode = function() {
 
 }
 
+// Check whether the user or computer won or tied
 myTicTacToeApp.checkWin = function(moves, player) {
-    const winCombinations = [
-        [0,1,2],
-        [3,4,5],
-        [6,7,8],
-        [0,3,6],
-        [1,4,7],
-        [2,5,8],
-        [0,4,8],
-        [2,4,6]
-    ];
-
-    const res = winCombinations.filter(combination => combination.filter(num => {
+    const res = this.winCombinations.filter(combination => combination.filter(num => {
         return moves.indexOf(num) > -1;
     }).length === 3);
+    
     if (res.length) {
-        this.winner = player;
+        this.winnerName = player;
         this.handleWinnerOptions();
     }
     else if (!res.length && this.numOfSpotsTaken === 9) {
@@ -105,21 +110,54 @@ myTicTacToeApp.checkWin = function(moves, player) {
     }
 }
 
+// Display winner modal when a player wins
 myTicTacToeApp.handleWinnerOptions = function() {
-    const winnerModal = document.getElementById('winnerModal');
-    const winner = document.getElementById('playerWinner');
     let text;
-    if (this.winner === 'you') {
-        text = `${this.winner} win!`
+    if (this.winnerName === 'you') {
+        text = `${this.winnerName} win!`
     }
-    else if (this.winner === 'computer') {
-        text = `${this.winner} wins!`;
+    else if (this.winnerName === 'computer') {
+        text = `${this.winnerName} wins!`;
     }
     else {
         text = `it's a draw`;
     }
-    winner.textContent = text;
-    this.openModal(winnerModal);
+    this._winner.textContent = text;
+    this.openModal(this._winnerModal);
+}
+
+// Handle user buttons clicks when user decides to play again
+myTicTacToeApp.handlePlayAgainButtons = function() {
+    this._yesButton.addEventListener('click', this.playAgain);
+    this._noButton.addEventListener('click', this.quitGame);
+}
+
+// Reset values when user clicks yes to play again
+myTicTacToeApp.playAgain = function() {
+    myTicTacToeApp.resetValues();
+    myTicTacToeApp.closeModal(myTicTacToeApp._winnerModal);
+}
+
+// Reset the game when user clicks no to quit
+myTicTacToeApp.quitGame = function() {
+    myTicTacToeApp.currentMode = null;
+    myTicTacToeApp.userMarker = null;
+    myTicTacToeApp.computerMarker = null;
+    myTicTacToeApp.resetValues();
+    myTicTacToeApp.openModal(myTicTacToeApp._welcomeModal);
+    myTicTacToeApp.closeModal(myTicTacToeApp._winnerModal);
+}
+
+// Reset values when user plays again or not
+myTicTacToeApp.resetValues = function() {
+    myTicTacToeApp.computerMoves = [];
+    myTicTacToeApp.numOfSpotsTaken = null;
+    myTicTacToeApp.userMoves = [];
+    myTicTacToeApp.winnerName = null;
+    myTicTacToeApp._gameGridButtons.forEach(button => {
+        button.textContent = null;
+        myTicTacToeApp.enableButton(button);
+    });
 }
 
 // Get computer marker based on user selected marker
@@ -146,14 +184,22 @@ myTicTacToeApp.getRandomNumber = function() {
 
 // Gets the current date year and displays it
 myTicTacToeApp.displayCurrentYear = function() {
-    const footerYear = document.getElementById('year');
-    footerYear.textContent = new Date().getFullYear();    
+    this._footerYear.textContent = new Date().getFullYear();    
 }
 
 // Run current year function
 myTicTacToeApp.init = function() {
+    this._welcomeModal = document.getElementById('welcomeModal');
+    this._winnerModal = document.getElementById('winnerModal');
+    this._welcomeSubmitForm = document.getElementById('welcomeOptionsForm');
+    this._gameGridButtons = document.querySelectorAll('.gameGrid__button');
+    this._winner = document.getElementById('playerWinner');
+    this._yesButton = document.getElementById('yes');
+    this._noButton = document.getElementById('no');
+    this._footerYear = document.getElementById('year');
     this.handleWelcomeModalOptions();
     this.handleGridButtons();
+    this.handlePlayAgainButtons();
     this.displayCurrentYear();
 };
 
