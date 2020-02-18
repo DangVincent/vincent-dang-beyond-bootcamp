@@ -330,13 +330,10 @@ a {
   .winner__heading {
     font-size: 1.2rem;
     font-family: 'Press Start 2P', cursive;
-    text-transform: capitalize;
-    text-transform: initial; }
+    text-transform: capitalize; }
     @media (max-width: 570px) {
       .winner__heading {
         font-size: 1rem; } }
-  .winner__innerHeading {
-    text-transform: capitalize; }
   .winner__text, .winner__button {
     text-transform: capitalize; }
   .winner__buttonContainer {

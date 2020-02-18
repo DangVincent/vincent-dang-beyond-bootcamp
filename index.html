@@ -36,7 +36,7 @@
                     <li class="welcome__instructionItem">when all 9 squares are full, the game is a draw.</li>
                     <li class="welcome__instructionItem">have fun!</li>
                 </ol>
-                <form id="welcomeOptionsForm" class="welcome__optionsForm">
+                <form action="GET" id="welcomeOptionsForm" class="welcome__optionsForm">
                     <div class="welcome__radioContainer">
                         <fieldset id="selectMode" class="welcome__radioGroup">
                             <legend class="welcome__legend">select mode</legend>
@@ -74,8 +74,7 @@
         </div>
         <div id="winnerModal" class="winner modal">
             <div class="winner__modalContent">
-                <h2 class="winner__heading"><span id="player" class="winner__innerHeading"></span> is the <span
-                        class="winner__innerHeading">winner!</span></h2>
+                <h2 id="playerWinner" class="winner__heading"></h2>
                 <p class="winner__text">play again?</p>
                 <div class="winner__buttonContainer">
                     <button type="button" class="winner__button">yes</button>
@@ -88,18 +87,22 @@
                 <table class="gameGrid__table">
                     <tr class="gameGrid__tableRow">
                         <td class="gameGrid__tableColumn">
+                            <button type="button" id="cell0" class="gameGrid__button"></button>
+                        </td>
+                        <td class="gameGrid__tableColumn">
                             <button type="button" id="cell1" class="gameGrid__button"></button>
+                        </td>
                         </td>
                         <td class="gameGrid__tableColumn">
                             <button type="button" id="cell2" class="gameGrid__button"></button>
                         </td>
                         </td>
+                    </tr>
+                    <tr class="gameGrid__tableRow">
                         <td class="gameGrid__tableColumn">
                             <button type="button" id="cell3" class="gameGrid__button"></button>
                         </td>
                         </td>
-                    </tr>
-                    <tr class="gameGrid__tableRow">
                         <td class="gameGrid__tableColumn">
                             <button type="button" id="cell4" class="gameGrid__button"></button>
                         </td>
@@ -108,22 +111,18 @@
                             <button type="button" id="cell5" class="gameGrid__button"></button>
                         </td>
                         </td>
+                    </tr>
+                    <tr class="gameGrid__tableRow">
                         <td class="gameGrid__tableColumn">
                             <button type="button" id="cell6" class="gameGrid__button"></button>
                         </td>
                         </td>
-                    </tr>
-                    <tr class="gameGrid__tableRow">
                         <td class="gameGrid__tableColumn">
                             <button type="button" id="cell7" class="gameGrid__button"></button>
                         </td>
                         </td>
                         <td class="gameGrid__tableColumn">
                             <button type="button" id="cell8" class="gameGrid__button"></button>
-                        </td>
-                        </td>
-                        <td class="gameGrid__tableColumn">
-                            <button type="button" id="cell9" class="gameGrid__button"></button>
                         </td>
                         </td>
                     </tr>

@@ -116,13 +116,9 @@
     }
     &__heading {
         @include headerFontSize(1.2rem);
-        text-transform: initial;
         @include resCaptain {
             font-size: 1rem;
         }
-    }
-    &__innerHeading {
-        text-transform: capitalize;
     }
     &__text,
     &__button {
